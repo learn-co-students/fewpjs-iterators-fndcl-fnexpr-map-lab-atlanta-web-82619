@@ -12,5 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const titleCasedTutorials = []
+
+  //look at each string of the tutorials array one at a time
+  for (const tutorial of tutorials) {
+    //separates each of the words into an array ['to', 'look', 'like', 'this']
+    let words = tutorial.split(" ")
+
+    //capitolizes each of the first letters then joins the rest of the word back on the end of it
+    let title = words.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+
+    //joins each of the words back together with a space and pushes them onto the titleCasedTutorials array
+    titleCasedTutorials.push(title.join(" "))
+  }
+  return titleCasedTutorials
 }
